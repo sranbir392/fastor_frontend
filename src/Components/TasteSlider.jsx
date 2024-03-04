@@ -6,8 +6,87 @@ import Slider from "react-slick";
 import TasteCard from "./TasteCard";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
-function TasteSlider(props) {
-  const { data } = props; // Destructure data directly from props
+function TasteSlider() {
+  
+  const data=[{
+    restaurant_id:123,
+    url:"https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+    title:"Nik Baker's",
+    dish:"Cakes, pastry,Pastas",
+    desc:"Connaught Place, New Delhi",
+    color:"#dba58a",
+
+},
+{
+  restaurant_id:123,
+  url:"https://media.istockphoto.com/id/1437118778/photo/indian-food-flatlay.webp?b=1&s=170667a&w=0&k=20&c=zsMfr1y9h8YX5R1kwywKk5nvcUIYR5Sk1PUpFrKlgN4=",
+  title:"Rahul Store",
+  dish:"Cakes, pastry,Pastas",
+  desc:"Connaught Place, New Delhi",
+  color:"#f5f5f5",
+
+},{
+  restaurant_id:123,
+  url:"https://media.istockphoto.com/id/1005390222/photo/chicken-tikka-masala-spicy-curry-meat-food-with-rice-and-naan-bread.webp?b=1&s=170667a&w=0&k=20&c=h83PGbDmQm5lK9NwKsnpp545j6oaLOMKENJ-qW4wnHk=",
+  title:"Nik Baker's",
+  dish:"Cakes, pastry,Pastas",
+  desc:"Connaught Place, New Delhi",
+  color:"#ddcfc6",
+
+},
+{
+  restaurant_id:123,
+  url:"https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+  title:"Nik Baker's",
+  dish:"Cakes, pastry,Pastas",
+  desc:"Connaught Place, New Delhi",
+  color:"#dba58a",
+
+},
+{
+restaurant_id:123,
+url:"https://media.istockphoto.com/id/1437118778/photo/indian-food-flatlay.webp?b=1&s=170667a&w=0&k=20&c=zsMfr1y9h8YX5R1kwywKk5nvcUIYR5Sk1PUpFrKlgN4=",
+title:"Rahul Store",
+dish:"Cakes, pastry,Pastas",
+desc:"Connaught Place, New Delhi",
+color:"#f5f5f5",
+
+},{
+restaurant_id:123,
+url:"https://media.istockphoto.com/id/1005390222/photo/chicken-tikka-masala-spicy-curry-meat-food-with-rice-and-naan-bread.webp?b=1&s=170667a&w=0&k=20&c=h83PGbDmQm5lK9NwKsnpp545j6oaLOMKENJ-qW4wnHk=",
+title:"Nik Baker's",
+dish:"Cakes, pastry,Pastas",
+desc:"Connaught Place, New Delhi",
+color:"#ddcfc6",
+
+},
+{
+  restaurant_id:123,
+  url:"https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+  title:"Nik Baker's",
+  dish:"Cakes, pastry,Pastas",
+  desc:"Connaught Place, New Delhi",
+  color:"#dba58a",
+
+},
+{
+restaurant_id:123,
+url:"https://media.istockphoto.com/id/1437118778/photo/indian-food-flatlay.webp?b=1&s=170667a&w=0&k=20&c=zsMfr1y9h8YX5R1kwywKk5nvcUIYR5Sk1PUpFrKlgN4=",
+title:"Rahul Store",
+dish:"Cakes, pastry,Pastas",
+desc:"Connaught Place, New Delhi",
+color:"#f5f5f5",
+
+},{
+restaurant_id:123,
+url:"https://media.istockphoto.com/id/1005390222/photo/chicken-tikka-masala-spicy-curry-meat-food-with-rice-and-naan-bread.webp?b=1&s=170667a&w=0&k=20&c=h83PGbDmQm5lK9NwKsnpp545j6oaLOMKENJ-qW4wnHk=",
+title:"Nik Baker's",
+dish:"Cakes, pastry,Pastas",
+desc:"Connaught Place, New Delhi",
+color:"#ddcfc6",
+
+},
+]
   const [sliderSettings, setSliderSettings] = useState({
     dots: false,
     infinite: false,
@@ -26,7 +105,7 @@ function TasteSlider(props) {
        
       });
     }
-  }, [data]); // Run effect whenever data changes
+  }, [data]); 
 
   let sliderRef = useRef(null);
 
@@ -60,9 +139,9 @@ function TasteSlider(props) {
          return <TasteCard
             key={e.restaurant_id}
             id={e.restaurant_id}
-            image={e.images[0].url}
-            name={e.restaurant_name}
-            locality={e.location ? e.location.location_locality : ''}
+            image={e.url}
+            name={e.title}
+            locality={e.desc}
             state={e.location ? e.location.state_name : ''}
           />
         }
