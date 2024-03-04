@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import { Flex, useColorModeValue } from '@chakra-ui/react';
 import './App.css';
+import Welcome from './Authorization/Welcome';
+import AllRoutes from './AllRoutes/AllRoutes';
+import Header from './Components/Header';
 
 function App() {
+  
+  const color = useColorModeValue('white', 'gray.800')
+  localStorage.removeItem('chakra-ui-color-mode');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Flex  h={{base:"100%",md:"100vh"}}  justifyContent={"center"} w="100%" margin={"auto"} bg={"red.500"}    >
+    <Flex margin={"auto"} w={{base:"100%",md:"100%",lg:"414px"}}  h={{base:"100%",md:"90vh"}} flexDir={"column"} overflow={"scroll"} bg={color}  >
+      {/* <Login/> */}
+      {/* <SignUp/> */}
+      {/* <Welcome/> */}
+      <AllRoutes/>
+      {/* <Header/> */}
+    </Flex>
+    </Flex>
   );
 }
 
